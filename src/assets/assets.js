@@ -5,6 +5,7 @@ import Sample_profile from './Sample_profile.png'
 import Sample_cover from './Sample_cover.png'
 import Sample_profile2 from './Sample_profile2.png'
 import Sample_cover2 from './Sample_cover2.png'
+import sponsered from './sponsered.png'
 import {Home,MessageCircle,Search,UserIcon,Users} from 'lucide-react'
 
 export const assets = {
@@ -15,6 +16,7 @@ export const assets = {
     Sample_cover,
     Sample_profile2,
     Sample_cover2,
+    sponsered,
 }
 
 export const menuItemsData = [
@@ -96,7 +98,6 @@ export const dummyStoriesData = [
   },
 ];
 
-
 export const dummyPostsData = [
   {
     _id: "p1",
@@ -105,7 +106,7 @@ export const dummyPostsData = [
     media_url: "",
     media_type: "text",
     background_color: "#fef3c7",
-    likes: 120,
+    likes: ["user_2", "user_3", "user_4"], // array of user IDs
     comments: 15,
     shares: 5,
     createdAt: "2025-07-20T10:15:00.000Z",
@@ -119,7 +120,7 @@ export const dummyPostsData = [
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
     media_type: "image",
     background_color: "",
-    likes: 342,
+    likes: ["user_1", "user_2", "user_5"],
     comments: 47,
     shares: 22,
     createdAt: "2025-07-21T14:30:00.000Z",
@@ -132,7 +133,7 @@ export const dummyPostsData = [
     media_url: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
     media_type: "video",
     background_color: "",
-    likes: 589,
+    likes: ["user_2", "user_3", "user_6", "user_7"],
     comments: 102,
     shares: 40,
     createdAt: "2025-07-22T18:00:00.000Z",
@@ -145,7 +146,7 @@ export const dummyPostsData = [
     media_url: "",
     media_type: "text",
     background_color: "#e0f2fe",
-    likes: 76,
+    likes: ["user_2"],
     comments: 12,
     shares: 4,
     createdAt: "2025-07-23T22:45:00.000Z",
@@ -159,10 +160,45 @@ export const dummyPostsData = [
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
     media_type: "image",
     background_color: "",
-    likes: 210,
+    likes: ["user_1", "user_3", "user_4", "user_5"],
     comments: 33,
     shares: 10,
     createdAt: "2025-07-24T09:10:00.000Z",
     updatedAt: "2025-07-24T09:10:00.000Z",
+  },
+]
+
+export const dummyRecentMessagesData = [
+  {
+    _id: "m1",
+    from_user_id: dummyUserData,
+    content: "Hey! How are you?",
+    createdAt: "2025-09-25T10:20:00.000Z",
+  },
+  {
+    _id: "m2",
+    from_user_id: {
+      ...dummyUserData,
+      _id: "user_2",
+      username: "Dhiraj Magar",
+      full_name: "Dhiraj Magar",
+      Profile_picture: Sample_profile2,
+    },
+    content: "Let's catch up later 🚀",
+    createdAt: "2025-09-26T14:45:00.000Z",
+  },
+  {
+    _id: "m3",
+    from_user_id: dummyUserData,
+    content: "Check out my new project 👀",
+    createdAt: "2025-09-27T18:30:00.000Z",
+  },
+]
+
+export const dummyConnectionsData = [
+  dummyUserData,
+  {
+    ...dummyUser2Data,
+    bio: "Traveler | Dreamer | Storyteller",
   },
 ]
